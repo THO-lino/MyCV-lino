@@ -1,0 +1,234 @@
+/* Bảng màu Hồng & Nâu */
+:root {
+    --taskboard-brown: #5D4037; /* Nâu chủ đạo sidebar */
+    --taskboard-dark: #3E2723;  /* Nâu đậm khi hover */
+    --bg-pink: #FCE4EC;         /* Hồng nền trang web */
+    --content-pink: #F8BBD0;    /* Hồng nhấn mạnh */
+    --white: #ffffff;
+    --text-dark: #2D2D2D;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-pink); /* Phông nền màu hồng */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cv-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* Sidebar - Taskboard màu Nâu */
+.sidebar {
+    background-color: var(--taskboard-brown);
+    padding: 40px 25px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.photo-placeholder {
+    width: 110px;
+    height: 110px;
+    background: var(--taskboard-dark);
+    border: 3px solid var(--content-pink);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--content-pink);
+    font-size: 2.5rem;
+}
+
+.name { color: var(--content-pink); font-size: 1.4rem; text-align: center; margin-bottom: 5px; }
+.title { color: var(--white); opacity: 0.8; font-size: 0.9rem; text-align: center; margin-bottom: 30px; font-weight: bold; }
+
+.sidebar-title { 
+    font-size: 0.85rem; 
+    color: var(--content-pink); 
+    margin: 25px 0 10px; 
+    text-transform: uppercase; 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 1px;
+}
+
+.nav-menu ul { list-style: none; }
+.nav-menu li { margin-bottom: 10px; }
+.nav-menu a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+}
+.nav-menu a:hover, .nav-menu a.active { 
+    background: var(--taskboard-dark); 
+    color: var(--content-pink); 
+    padding-left: 20px;
+}
+.nav-menu a i { margin-right: 12px; width: 20px; }
+
+.contact-box p { font-size: 0.85rem; margin-bottom: 12px; line-height: 1.4; }
+.contact-box i { color: var(--content-pink); margin-right: 10px; }
+
+/* Nội dung bên phải phông nền hồng nhẹ */
+.main-content {
+    padding: 40px 60px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    background-color: #FFF9FB; /* Màu hồng cực nhẹ để dễ đọc văn bản */
+}
+
+.detail-section {
+    min-height: auto;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    color: var(--taskboard-brown);
+    border-left: 5px solid var(--taskboard-brown);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+}
+
+.content-card, .project-detail {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 25px;
+    border: 1px solid var(--content-pink); /* Viền hồng mảnh cho card */
+}
+
+.date { font-weight: bold; color: var(--taskboard-brown); font-size: 0.85rem; display: block; margin-bottom: 5px; }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-item {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--content-pink);
+    font-size: 0.95rem;
+}
+
+ul { padding-left: 20px; color: #444; }
+li { margin-bottom: 8px; font-size: 0.95rem; }
+
+/* Phần Responsive đã được chuyển xuống cuối file */
+/* Tùy chỉnh ảnh Profile */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Giữ tỉ lệ ảnh không bị méo */
+    border-radius: 50%; /* Tạo hình tròn */
+    border: 4px solid var(--content-pink); /* Viền màu hồng nhấn mạnh */
+    margin: 0 auto 15px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Căn chỉnh lại khối profile */
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content-card {
+    background: #ffffff;
+    border-radius: 30px; /* Bo góc tròn hơn như mẫu */
+    padding: 30px;
+    margin-bottom: 30px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Tạo một mảng màu trang trí phía sau ảnh hoặc nội dung */
+.content-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: none;
+    position: relative; /* Quan trọng để định vị các phần tử con */
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+    z-index: 1; /* Tạo một ngữ cảnh xếp chồng mới cho card */
+}
+
+.content-card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--bg-pink);
+    border-radius: 50%;
+    z-index: -1; /* Đẩy lớp trang trí này xuống dưới cùng của card */
+    opacity: 0.5;
+}
+
+/* Đảm bảo tất cả nội dung bên trong card nằm trên lớp trang trí */
+.content-card * {
+    position: relative;
+    z-index: 2;
+}
+/* Responsive cho Tablet và Điện thoại */
+@media (max-width: 900px) {
+    body { 
+        overflow: auto; 
+        display: block;
+    }
+    .cv-container { 
+        display: flex; 
+        flex-direction: column;
+        height: auto; 
+        min-height: 100vh;
+    }
+    .sidebar { 
+        width: 100%; 
+        height: auto; 
+        padding: 30px 20px;
+    }
+    .main-content { 
+        width: 100%; 
+        padding: 30px 20px;
+        overflow-y: visible;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr; /* Kỹ năng hiển thị 1 cột trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar { padding: 20px 15px; }
+    .main-content { padding: 20px 15px; }
+    .name { font-size: 1.2rem; }
+    .title { font-size: 0.85rem; margin-bottom: 20px; }
+    .photo-placeholder { width: 90px; height: 90px; font-size: 2rem; margin-bottom: 15px; }
+    .profile-img { width: 100px; height: 100px; margin-bottom: 10px; }
+    .main-title { font-size: 1.1rem; margin-bottom: 15px; }
+    .content-card, .project-detail { padding: 20px; margin-bottom: 20px; }
+    .nav-menu a { padding: 8px; font-size: 0.95rem; }
+    .contact-box p { font-size: 0.8rem; }
+}
